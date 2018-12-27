@@ -1,6 +1,6 @@
 Chip8/SuperChip/Chip48 Disassembler
 ====================================
-An disassembler for Chip8/Chip48/SuperChip roms written in Scala.
+A disassembler for Chip8/Chip48/SuperChip roms written in Scala.
 I needed this while working on my Chip8/SuperCHIP emulator, then I made it independent and reusable.
 
 To build the disassembler you need to make sure you have `scalac` and `sbt`, then run:

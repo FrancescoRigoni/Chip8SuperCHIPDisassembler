@@ -3,7 +3,7 @@ import java.io.FileWriter
 import scala.collection.mutable
 
 /*
-  SuperChip Emulator.
+  Chip8/SuperCHIP Disassembler.
 
   Copyright (C) 2018 Francesco Rigoni - francesco.rigoni@gmail.com
   This program is free software: you can redistribute it and/or modify
@@ -58,6 +58,21 @@ class Disassembler(private val programBytes: Array[Byte],
         }
 
         disassembledCodeOutput.append("\n\n")
+      }
+    }
+
+    disassembledCodeOutput.append("=== Data ===\n\n")
+    for (address <- programBytes.indices) {
+      val chip8Address = address + Constants.PROGRAM_START
+      if (!disassembledAddresses.contains(chip8Address)) {
+        disassembledCodeOutput.append("Addr ")
+        disassembledCodeOutput.append(asHexAddress(chip8Address))
+        disassembledCodeOutput.append(" Hex ")
+        disassembledCodeOutput.append(asHexByte(programBytes(address)))
+        disassembledCodeOutput.append(" Bin ")
+        disassembledCodeOutput.append(
+          String.format("%8s", Integer.toBinaryString(programBytes(address) & 0xFF)).replace(' ', '0'))
+        disassembledCodeOutput.append("\n")
       }
     }
 

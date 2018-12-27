@@ -2,7 +2,7 @@
 import scala.collection.mutable
 
 /*
-  SuperChip Emulator.
+  Chip8/SuperCHIP Disassembler.
 
   Copyright (C) 2018 Francesco Rigoni - francesco.rigoni@gmail.com
   This program is free software: you can redistribute it and/or modify
